@@ -1,0 +1,39 @@
+.header-links{
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    margin:0;
+    padding: 0 1em 0 0;
+
+    li{
+        a{
+            text-decoration: none;
+            color: #2b303a;
+            display: block;
+            padding: 0.5em;
+            margin: 0.5em;
+            background-color: #bac1b8;
+            border-radius: 0.3em;
+        }
+    }
+}
+
+.header-logo{
+    display:flex;
+    align-items: center;
+    padding: 1em 0 1em 1em;
+
+    h1{
+        color: #2b303a;
+        padding: 0.5em;
+        margin: 0;
+    }
+}
+
+.header-bar{
+    background: #58a4b0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
