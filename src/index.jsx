@@ -1,12 +1,12 @@
 /* eslint-disable no-undef */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
 import App from './App';
+import createStore, { history } from './store';
+
+const store = createStore();
 
 ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
+  <App store={store} history={history} />,
   document.getElementById('root')
 );

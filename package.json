@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cross-env NODE_ENV=production webpack --config webpack.prod.js",
-    "start": "cross-env NODE_ENV=development webpack-dev-server --hot --config webpack.dev.js --open",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --config webpack.dev.js",
     "clean": "rimraf build"
   },
   "keywords": [
@@ -19,6 +19,7 @@
     "@babel/cli": "^7.6.4",
     "@babel/core": "^7.6.4",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
     "@babel/polyfill": "^7.6.0",
     "@babel/preset-env": "^7.6.3",
     "@babel/preset-react": "^7.6.3",
@@ -50,9 +51,16 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
+    "@hot-loader/react-dom": "^16.10.2",
+    "axios": "^0.19.0",
+    "connected-react-router": "^6.5.2",
+    "prop-types": "^15.7.2",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-hot-loader": "^4.12.15",
-    "react-router-dom": "^5.1.2"
+    "react-redux": "^7.1.1",
+    "react-router-dom": "^5.1.2",
+    "redux": "^4.0.4",
+    "redux-thunk": "^2.3.0"
   }
 }

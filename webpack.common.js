@@ -6,7 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
-  entry: ['@babel/polyfill', 'react-hot-loader/patch', './src/index.jsx'],
+  entry: ['react-hot-loader/patch', '@babel/polyfill', './src/index.jsx'],
   module: {
     rules: [
       {
@@ -50,7 +50,10 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx']
+    extensions: ['*', '.js', '.jsx'],
+    alias: {
+      'react-dom': '@hot-loader/react-dom'
+    }
   },
   plugins: [
     new CleanWebpackPlugin(),

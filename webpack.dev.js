@@ -8,7 +8,11 @@ module.exports = merge(common, {
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: path.resolve(__dirname, 'public')
+    contentBase: path.resolve(__dirname, 'public'),
+    headers: {
+      'Access-Control-Allow-Origin': '*'
+    },
+    historyApiFallback: true
   },
   plugins: [new webpack.HotModuleReplacementPlugin()]
 });

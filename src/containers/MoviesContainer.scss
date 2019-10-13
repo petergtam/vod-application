@@ -1,0 +1,9 @@
+.movie-list-row {
+  display: flex;
+  flex-flow: row nowrap;
+  overflow-x: scroll;
+}
+
+.movie-list-row::-webkit-scrollbar {
+  width: 0 !important;
+}

@@ -1,25 +1,39 @@
+import { hot } from 'react-hot-loader/root';
 import React from 'react';
-import { hot } from 'react-hot-loader';
+import PropTypes from 'prop-types';
 import { Switch, Route } from 'react-router-dom';
-import Header from './Header';
-import Home from './Home';
-import History from './History';
-import './App.scss';
+import { ConnectedRouter } from 'connected-react-router';
+import { Provider } from 'react-redux';
 
-function App() {
+import Header from './components/Header';
+import Home from './components/Home';
+import History from './components/History';
+import DetailContainer from './containers/DetailContainer';
+
+function App({ store, history }) {
   return (
-    <div className="app-style">
-      <Header />
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/history">
-          <History />
-        </Route>
-      </Switch>
-    </div>
+    <Provider store={store}>
+      <ConnectedRouter history={history}>
+        <Header />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/history">
+            <History />
+          </Route>
+          <Route path="/detail/:id">
+            <DetailContainer />
+          </Route>
+        </Switch>
+      </ConnectedRouter>
+    </Provider>
   );
 }
 
-export default hot(module)(App);
+App.propTypes = {
+  store: PropTypes.shape().isRequired,
+  history: PropTypes.shape().isRequired
+};
+
+export default hot(App);

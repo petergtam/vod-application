@@ -1,0 +1,11 @@
+.movie-tile {
+  display: flex;
+  flex-flow: column;
+  margin-right: 0.3em;
+}
+
+.movie-tile-title {
+  margin: 0;
+  white-space: pre-wrap;
+  text-align: center;
+}

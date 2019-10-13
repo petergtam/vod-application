@@ -1,8 +1,16 @@
 {
   "parser": "babel-eslint",
   "extends": ["airbnb", "prettier", "prettier/react"],
-  "plugins": ["prettier"],
+  "plugins": ["prettier", "react-hooks"],
   "rules": {
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/jsx-props-no-spreading": [
+      "error",
+      {
+        "exceptions": ["MovieCard", "Detail"]
+      }
+    ]
   }
 }

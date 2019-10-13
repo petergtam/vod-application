@@ -1,0 +1,13 @@
+.detail-container {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 0.5em 0 0 1em;
+}
+
+.detail-left {
+  flex: 1;
+}
+
+.detail-right {
+  flex: 3;
+}
