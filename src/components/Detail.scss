@@ -1,13 +1,24 @@
 .detail-container {
   display: flex;
   flex-flow: row wrap;
-  padding: 0.5em 0 0 1em;
+  justify-content: center;
+  margin-top: 3em;
+
+  img{
+    margin-right: 1em;
+  }
 }
 
-.detail-left {
-  flex: 1;
+.detail-smaller{
+  font-size: smaller;
 }
 
-.detail-right {
-  flex: 3;
+.detail-larger{
+  font-size: larger;
+}
+
+.detail-button{
+  padding: 2em;
+  background-color: #bac1b8;
+  border-radius: 0.3em;
 }

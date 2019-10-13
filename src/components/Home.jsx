@@ -1,5 +1,5 @@
 import React from 'react';
-import './Home.scss';
+import './Movies.scss';
 import MoviesContainer from '../containers/MoviesContainer';
 
 export default function Home() {

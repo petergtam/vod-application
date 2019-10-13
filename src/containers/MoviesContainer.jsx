@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import MovieCard from '../components/MovieCard';
 import { getMovies } from '../actions/Movies';
-import sendDetail from '../actions/Detail';
+import { sendDetail } from '../actions/Detail';
 import './MoviesContainer.scss';
 
 class MoviesContainer extends React.Component {

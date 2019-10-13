@@ -1,22 +1,34 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Detail from '../components/Detail';
+import { matchDetailSelector } from '../selectors/routerSelectors';
+import { sendWatched } from '../actions/Detail';
 
-function DetailContainer({ movie }) {
-  return <Detail {...movie} />;
+function DetailContainer(props) {
+  return <Detail {...props} />;
 }
 
-DetailContainer.propTypes = {
-  movie: PropTypes.shape().isRequired
-};
-
-const mapStateToProps = state => {
-  const path = state.router.location.pathname.split('/');
-  const param = parseInt(path[path.length - 1], 10);
+const mapDispatchToProps = dispatch => {
   return {
-    movie: state.movies.data[param]
+    addToWatched: index => {
+      dispatch(sendWatched(index));
+    }
   };
 };
 
-export default connect(mapStateToProps)(DetailContainer);
+const mapStateToProps = state => {
+  const match = matchDetailSelector(state);
+  let index = 0;
+  if (match.params) {
+    index = match.params.index;
+  }
+  return {
+    movie: state.movies.data[index],
+    index
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(DetailContainer);
