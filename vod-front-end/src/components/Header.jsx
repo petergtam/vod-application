@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/tabindex-no-positive */
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Header.scss';
@@ -13,12 +14,14 @@ export default function Header() {
       </div>
       <ul className="header-links">
         <li>
-          <NavLink to="/" exact>
+          <NavLink to="/" exact tabIndex={1} role="button">
             Home
           </NavLink>
         </li>
         <li>
-          <NavLink to="/history">History</NavLink>
+          <NavLink to="/history" tabIndex={2} role="button">
+            History
+          </NavLink>
         </li>
       </ul>
     </nav>

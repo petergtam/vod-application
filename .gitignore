@@ -13,8 +13,12 @@
 # Ignore all local history of files
 .history
 
-yarn.lock
-package-lock.json
+**/yarn.lock
+**/package-lock.json
+**/node_modules
+
+**/dist
+
+**/build
 
 # End of https://www.gitignore.io/api/visualstudiocode
-node_modules

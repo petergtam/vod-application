@@ -39,8 +39,8 @@ class Detail extends React.Component {
     if (document.fullscreenElement) {
       document.exitFullscreen();
     }
-    const { addToWatched, index } = this.props;
-    addToWatched(index);
+    const { addToWatched, movie } = this.props;
+    addToWatched(movie.id);
   };
 
   handleFullScreen = () => {
@@ -124,8 +124,7 @@ Detail.defaultProps = {
 
 Detail.propTypes = {
   movie: PropTypes.shape(),
-  addToWatched: PropTypes.func.isRequired,
-  index: PropTypes.string.isRequired
+  addToWatched: PropTypes.func.isRequired
 };
 
 export default Detail;

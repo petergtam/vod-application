@@ -1,5 +1,5 @@
 {
-  "name": "vod-application",
+  "name": "vod-front-end",
   "version": "1.0.0",
   "description": "VOD Application (ReacJS) - The app tracks the videos a user has watched.",
   "main": "index.js",

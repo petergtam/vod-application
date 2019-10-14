@@ -9,3 +9,11 @@
   white-space: pre-wrap;
   text-align: center;
 }
+
+.movie-tile:hover {
+  border: 1px solid red;
+}
+
+.movie-tile:focus {
+  border: 1px solid red;
+}
