@@ -1,9 +1,5 @@
-.movie-list-row {
-  display: flex;
-  flex-flow: row nowrap;
-  overflow-x: scroll;
-}
-
-.movie-list-row::-webkit-scrollbar {
-  width: 0 !important;
+.movie-wrapper {
+  padding: 1.6em 0;
+  overflow: scroll;
+  position: relative;
 }

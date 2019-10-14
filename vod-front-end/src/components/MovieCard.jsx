@@ -11,7 +11,24 @@ export default class MovieCard extends React.Component {
     };
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    this.divRef.addEventListener('mouseenter', this.handleEnter);
+    this.divRef.addEventListener('mouseleave', this.handleLeave);
+  }
+
+  componentWillUnmount() {
+    this.divRef.removeEventListener('mouseenter', this.handleEnter);
+    this.divRef.removeEventListener('mouseleave', this.handleLeave);
+  }
+
+  handleEnter = () => {
+    const { setCurrentTile, index } = this.props;
+    setCurrentTile(index);
+  };
+
+  handleLeave = () => {
+    this.divRef.blur();
+  };
 
   render() {
     const { id, index, title, images, detailView, handleKeyDown } = this.props;
@@ -57,5 +74,6 @@ MovieCard.propTypes = {
   id: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
   handleKeyDown: PropTypes.func.isRequired,
-  active: PropTypes.bool.isRequired
+  active: PropTypes.bool.isRequired,
+  setCurrentTile: PropTypes.func.isRequired
 };

@@ -1,0 +1,31 @@
+$main-text-color: white;
+$secondary-text-color: #2b303a;
+$header-accent-color: #bac1b8;
+$header-bg-color: #58a4b0;
+$content-bg-color: #2b303a;
+
+// Breakpoints
+$bp-smaller: 40em; // 640px
+$bp-small: 48em; // 768px
+$bp-medium: 64em; // 1024px
+$bp-large: 85.375em; // 1366px
+$bp-xlarge: 120em; // 1920px
+$bp-xxlarge: 160em; // 2560px
+$bp-xxxlarge: 240em; //3840px
+
+// Media Queries
+$mq-smaller: '(min-width: #{$bp-smaller})';
+$mq-small: '(min-width: #{$bp-small})';
+$mq-medium: '(min-width: #{$bp-medium})';
+$mq-large: '(min-width: #{$bp-large})';
+$mq-xlarge: '(min-width: #{$bp-xlarge})';
+$mq-xxlarge: '(min-width: #{$bp-xxlarge})';
+$mq-xxxlarge: '(min-width: #{$bp-xxxlarge})';
+
+$mq-max-smaller: '(max-width: #{$bp-smaller})';
+
+// Font-Size
+$base-font-size: 1em;
+
+// Line-Height
+$base-line-height: 1.6;

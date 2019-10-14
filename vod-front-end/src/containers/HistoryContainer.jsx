@@ -3,8 +3,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import MovieCardContainer from './MovieCardContainer';
-import './MoviesContainer.scss';
 import { getHistory } from '../actions/History';
+import './MoviesContainer.scss';
 
 class HistoryContainer extends React.Component {
   constructor(props) {
@@ -50,21 +50,30 @@ class HistoryContainer extends React.Component {
     this.setState({ active });
   };
 
+  setCurrentTile = index => {
+    this.setState({ active: index });
+  };
+
   render() {
     const { watched } = this.props;
     const { active } = this.state;
     return (
       <>
         {watched.length > 0 && (
-          <div className="movie-list-row">
-            {watched.map((movieId, index) => (
-              <MovieCardContainer
-                key={movieId}
-                id={movieId}
-                active={index + 3 === active}
-                index={index}
-              />
-            ))}
+          <div className="movie-wrapper">
+            <div className="movie">
+              <div className="movie-list-row">
+                {watched.map((movieId, index) => (
+                  <MovieCardContainer
+                    key={movieId}
+                    id={movieId}
+                    active={index + 3 === active}
+                    index={index}
+                    setCurrentTile={this.setCurrentTile}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
         )}
         {watched.length === 0 && <h3>You have no watched any video yet</h3>}

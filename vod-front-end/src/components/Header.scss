@@ -1,3 +1,5 @@
+@import '../global.scss';
+
 .header-links {
   display: flex;
   justify-content: space-between;
@@ -8,11 +10,11 @@
   li {
     a {
       text-decoration: none;
-      color: #2b303a;
+      color: $secondary-text-color;
       display: block;
       padding: 1em 1.5em 1em 1.5em;
       margin: 1em;
-      background-color: #bac1b8;
+      background-color: $header-accent-color;
       border-radius: 0.3em;
     }
   }
@@ -24,7 +26,7 @@
   padding: 1em 0 1em 1em;
 
   h1 {
-    color: #2b303a;
+    color: $secondary-text-color;
     padding: 0.5em;
     margin: 0;
   }
@@ -36,4 +38,8 @@
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
+
+  @media #{$mq-max-smaller} {
+    flex-flow: column;
+  }
 }

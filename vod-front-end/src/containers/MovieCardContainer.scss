@@ -1,0 +1,35 @@
+.movie {
+  display: flex;
+  position: relative;
+}
+.movie-list-row {
+  display: flex;
+  padding: 0 0.7em;
+  transition: transform 300ms ease 100ms;
+  z-index: 3;
+  width: 100%;
+}
+
+.movie .movie-tile:hover {
+  transform: scale(1.1) !important;
+}
+
+.movie .movie-tile:focus {
+  transform: scale(1.1) !important;
+}
+
+.movie:hover .movie-tile {
+  transform: translateX(-5%);
+}
+
+.movie:focus .movie-tile {
+  transform: translateX(-5%);
+}
+
+.movie .movie-tile:hover ~ .movie-tile {
+  transform: translateX(5%);
+}
+
+.movie .movie-tile:focus ~ .movie-tile {
+  transform: translateX(5%);
+}

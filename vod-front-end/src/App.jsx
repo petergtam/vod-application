@@ -9,6 +9,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import History from './components/History';
 import DetailContainer from './containers/DetailContainer';
+import './App.scss';
 
 function App({ store, history }) {
   return (

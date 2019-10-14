@@ -80,7 +80,7 @@ class Detail extends React.Component {
             objectFit: `${type}`
           }}
         />
-        <div style={{ width: `${width * 2.5}px` }}>
+        <div className="detail-right">
           <h1>{title}</h1>
           <p className="detail-smaller">
             {`${parentalRatings

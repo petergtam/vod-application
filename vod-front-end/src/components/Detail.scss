@@ -1,24 +1,36 @@
+@import '../global.scss';
+
 .detail-container {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  align-items: center;
   margin-top: 3em;
 
-  img{
+  img {
     margin-right: 1em;
   }
 }
+.detail-right {
+  width: 50%;
 
-.detail-smaller{
+  @media #{$mq-max-smaller} {
+    width: 100%;
+  }
+}
+
+.detail-smaller {
   font-size: smaller;
 }
 
-.detail-larger{
+.detail-larger {
   font-size: larger;
 }
 
-.detail-button{
+.detail-button {
   padding: 2em;
-  background-color: #bac1b8;
+  background-color: $header-accent-color;
   border-radius: 0.3em;
+  color: $secondary-text-color;
+  font-family: 'Space Mono', monospace;
 }

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import MovieCard from '../components/MovieCard';
 import { sendDetail } from '../actions/Detail';
+import './MovieCardContainer.scss';
 
 class MovieCardContainer extends React.Component {
   handleKeyDown = id => e => {
@@ -17,7 +18,7 @@ class MovieCardContainer extends React.Component {
   };
 
   render() {
-    const { movie, index, detailView, active } = this.props;
+    const { movie, index, detailView, active, setCurrentTile } = this.props;
     return (
       <MovieCard
         key={movie.id}
@@ -25,6 +26,7 @@ class MovieCardContainer extends React.Component {
         detailView={detailView}
         active={active}
         handleKeyDown={this.handleKeyDown}
+        setCurrentTile={setCurrentTile}
         {...movie}
       />
     );
@@ -39,7 +41,8 @@ MovieCardContainer.propTypes = {
   movie: PropTypes.shape(),
   detailView: PropTypes.func.isRequired,
   index: PropTypes.number.isRequired,
-  active: PropTypes.bool.isRequired
+  active: PropTypes.bool.isRequired,
+  setCurrentTile: PropTypes.func.isRequired
 };
 
 const mapDispatchToProps = dispatch => {

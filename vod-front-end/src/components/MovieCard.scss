@@ -1,19 +1,13 @@
 .movie-tile {
+  flex: 0 0 6%;
+  transition: transform 300ms ease 100ms;
+  margin-right: 0.3em;
+  position: relative;
   display: flex;
   flex-flow: column;
-  margin-right: 0.3em;
 }
-
 .movie-tile-title {
   margin: 0;
   white-space: pre-wrap;
   text-align: center;
-}
-
-.movie-tile:hover {
-  border: 1px solid red;
-}
-
-.movie-tile:focus {
-  border: 1px solid red;
 }

@@ -49,21 +49,33 @@ class MoviesContainer extends React.Component {
     this.setState({ active });
   };
 
+  setCurrentTile = index => {
+    this.setState({ active: index });
+  };
+
   render() {
     const { movies } = this.props;
     const { active } = this.state;
     return (
-      <div className="movie-list-row">
-        {movies &&
-          movies.map((movie, index) => (
-            <MovieCardContainer
-              key={movie.id}
-              id={movie.id}
-              active={index + 3 === active}
-              index={index}
-            />
-          ))}
-      </div>
+      <>
+        {movies && (
+          <div className="movie-wrapper">
+            <div className="movie">
+              <div className="movie-list-row">
+                {movies.map((movie, index) => (
+                  <MovieCardContainer
+                    key={movie.id}
+                    id={movie.id}
+                    active={index + 3 === active}
+                    index={index}
+                    setCurrentTile={this.setCurrentTile}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+      </>
     );
   }
 }
