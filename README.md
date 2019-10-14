@@ -62,10 +62,10 @@ Now you should run the `vod-fron-end` project.
 
 ### vod-fron-end
 
-Go to the `vod-back-end` folder.
+Go to the `vod-front-end` folder.
 
 ```sh
-cd vod-back-end
+cd vod-front-end
 ```
 
 Install the dependencies.
